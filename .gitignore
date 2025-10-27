@@ -1,4 +1,10 @@
 .make/
+.vscode/
 
 zombie
 horde
+reference
+violence
+sed
+*.txt
+*.replace
