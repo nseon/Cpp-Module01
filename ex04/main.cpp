@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:24:57 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/27 15:37:26 by nseon            ###   ########.fr       */
+/*   Updated: 2025/10/27 18:04:02 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc != 4)
+	if (argc != 4 || argv[2][0] == 0)
 	{
 		std::cout << "Wrong arguments !\nUsage: ./sed filename s1 s2" << std::endl;
 		return (1);
@@ -36,10 +36,11 @@ int	main(int argc, char **argv)
 	file.close();
 	std::string str = ss.str();
 	std::string::size_type i = 0;
-	while ((i = str.find(s1)) != std::string::npos)
+	while ((i = str.find(s1, i)) != std::string::npos)
 	{
 		str.erase(i, s1.size());
 		str.insert(i, s2);
+		i += s2.size();
 	}
 	std::ofstream replace((filename + ".replace").c_str());
 	replace << str;

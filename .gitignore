@@ -1,10 +1,12 @@
 .make/
 .vscode/
 
+*.replace
+
 zombie
 horde
 reference
 violence
 sed
-*.txt
-*.replace
+harl
+harlFilter
