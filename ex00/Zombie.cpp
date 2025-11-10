@@ -6,13 +6,18 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:41:16 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/21 17:17:59 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/10 15:22:32 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 #include "Zombie.hpp"
+
+Zombie::Zombie() : _name("Zombie")
+{
+	std::cout << "Default constructor called" << std::endl;
+}
 
 Zombie::~Zombie()
 {

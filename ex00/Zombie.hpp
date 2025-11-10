@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:41:18 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/21 18:02:49 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/10 15:20:25 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Zombie {
 	private:
 		std::string _name;
 	public:
+		Zombie();
 		~Zombie();
 		void announce( void );
 		void setName(std::string name);
