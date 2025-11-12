@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:32:11 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/21 18:35:33 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/12 11:36:22 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	Zombie *h = zombieHorde(15, "Boo");
 	
-	for (int i = 0; i < 15; i++)
+	for (int i = 0; i < -5; i++)
 		h[i].announce();
 	delete[] h;
 	return (0);

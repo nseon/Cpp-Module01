@@ -6,7 +6,7 @@
 /*   By: nseon <nseon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:36:52 by nseon             #+#    #+#             */
-/*   Updated: 2025/10/28 14:18:39 by nseon            ###   ########.fr       */
+/*   Updated: 2025/11/12 11:50:25 by nseon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,33 @@ void Harl::error( void )
 	std::cout << "This is unacceptable! I want to speak to the manager now\n" << std::endl;
 }
 
+enum level {
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR,
+	NOTHING
+};
+
 void Harl::complain( std::string level )
 {
-	void (Harl::* const ptrs[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	const std::string strs[4] = {"debug", "info", "warning", "error"};
-	
-	for (int i = 0; i < 4; i++)
+	const std::string strs[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	int i = 0;
+
+	while (i < 4 && strs[i] != level)
+		++i;
+	switch (i)
 	{
-		if (strs[i] == level)
-		{
-			(this->*ptrs[i])();
-			return ;		
-		}
+		case NOTHING:
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
+			break ;
+		case DEBUG:
+			debug();
+		case INFO:
+			info();
+		case WARNING:
+			warning();
+		case ERROR:
+			error();
 	}
-	std::cout << "invalid level" << std::endl;
 }
